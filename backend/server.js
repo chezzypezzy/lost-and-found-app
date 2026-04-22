@@ -15,7 +15,10 @@ const app = express();
 app.use(express.json());
 
 // Enable CORS
-app.use(cors());
+app.use(cors({
+  origin: process.env.CLIENT_URL || 'http://localhost:5173', // Allows local dev AND production
+  credentials: true
+}));
 
 // Define routes
 app.use('/api/auth', require('./routes/authRoutes'));
