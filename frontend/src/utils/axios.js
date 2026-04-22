@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-// REPLACE 'http://localhost:5000' with your ACTUAL Render Backend URL
 const instance = axios.create({
-  baseURL: 'https://lost-and-found-app-z7nt.onrender.com', 
+  // Make sure this ends with /api
+  baseURL: 'https://lost-and-found-app-z7nt.onrender.com/api', 
 });
 
 // Add a request interceptor to include the token if it exists
