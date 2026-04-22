@@ -20,10 +20,10 @@ const Register = () => {
       const res = await axios.post('/auth/register', formData);
       localStorage.setItem('token', res.data.token);
       localStorage.setItem('userId', res.data.userId);
-      navigate('/'); // Redirect to home after successful register
+      navigate('/');
     } catch (err) {
-      console.error(err.response.data);
-      alert(err.response.data.msg || 'Registration failed');
+      console.error("Registration Error:", err.response ? err.response.data : err.message);
+      alert(err.response?.data?.msg || 'Registration failed');
     }
   };
 
