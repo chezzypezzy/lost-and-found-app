@@ -1,7 +1,8 @@
 import axios from 'axios';
 
+// REPLACE 'http://localhost:5000' with your ACTUAL Render Backend URL
 const instance = axios.create({
-  baseURL: '/api', // Uses the proxy we set in vite.config.js
+  baseURL: 'https://lost-and-found-app-z7nt.onrender.com', 
 });
 
 // Add a request interceptor to include the token if it exists
